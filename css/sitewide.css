@@ -836,6 +836,7 @@ footer hr {
 }
 
 .portfolio__card:hover .portfolio__info{
+  width: 100%;
   left: 0;
   transition: .2s ease;
   margin: auto;
