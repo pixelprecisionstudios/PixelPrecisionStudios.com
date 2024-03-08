@@ -325,6 +325,7 @@ header{
 .logo{
   display: block;
   margin: auto 0;
+  min-width: 150px;
 }
 
 .logo object{
