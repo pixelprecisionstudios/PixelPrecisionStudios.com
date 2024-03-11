@@ -461,7 +461,7 @@ header{
       gap: 0;
       padding: 61px 0 0 0;
       flex-direction: column;
-      background-color: #212121;
+      background-color: var(--main-bg-color);
       width: 100%;
       text-align: center;
       transition: .3s;
