@@ -716,10 +716,6 @@ footer hr {
   text-align: center;
 }
 
-#pricing ::-webkit-scrollbar{
-  /* display: none; */
-}
-
 #pricing a{
   margin: 0 auto;
 }
@@ -751,12 +747,21 @@ footer hr {
     width: 100%;
     scroll-snap-type: x mandatory;
     padding: 0 10%;
+    align-items: flex-end;
   }
 
   .pricing-card-wrapper .card{
     flex: 1 0 100%;
     scroll-snap-align: center;
   }
+
+  .pricing-card-wrapper, .pricing-card-wrapper .card {
+    transform: rotateX(180deg);
+    -moz-transform: rotateX(180deg);
+    -webkit-transform: rotateX(180deg);
+    -ms-transform: rotateX(180deg);
+    -o-transform: rotateX(180deg);
+}
 }
 
 /* PORTFOLIO */
