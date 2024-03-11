@@ -452,6 +452,7 @@ header{
     .header-wrapper{
       position: relative;
       left: -100%;
+      box-shadow: none;
     }
 
     .navbar-contents{
