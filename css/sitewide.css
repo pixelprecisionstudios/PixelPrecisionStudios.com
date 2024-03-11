@@ -694,6 +694,7 @@ footer hr {
 
 .card object{
   width: 4em;
+  height: 4em;
   padding: .5em;
   background: var(--main-bg-accent);
   border-radius: var(--border-radius);
@@ -809,6 +810,10 @@ footer hr {
   margin: auto;
   transition: .2s ease;
   z-index: 2;
+}
+
+.portfolio__info h2 {
+  font-size: 1.1rem;
 }
 
 .portfolio__info .circle-btn{
