@@ -717,7 +717,7 @@ footer hr {
 }
 
 #pricing ::-webkit-scrollbar{
-  display: none;
+  /* display: none; */
 }
 
 #pricing a{
