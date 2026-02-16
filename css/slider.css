@@ -190,6 +190,16 @@
       user-select: none;
     }
 
+    .pp-portfolio__nav.pp-portfolio__nav--prev {
+      position: absolute;
+      z-index: 10000000;
+    }
+
+    .pp-portfolio__nav.pp-portfolio__nav--next {
+      position: absolute;
+      z-index: 10000000;
+    }
+
     .pp-portfolio__nav:hover{ transform: translateY(-1px); }
     .pp-portfolio__nav:disabled{ opacity: .35; cursor: not-allowed; transform: none; }
 
