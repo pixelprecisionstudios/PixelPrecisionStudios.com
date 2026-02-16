@@ -1,0 +1,247 @@
+/* ====== Portfolio Slider (new classes only) ====== */
+
+    .pp-portfolio{
+      padding: clamp(3rem, 6vw, 5rem) 0;
+      background: var(--main-bg-accent);
+    }
+
+    .pp-portfolio__header{
+      width: min(1100px, 86%);
+      margin: 0 auto 1.5rem;
+      text-align: center;
+    }
+
+    .pp-portfolio__kicker{
+      margin: 0 0 .35rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      font-size: .85rem;
+      opacity: .75;
+      color: var(--p-color);
+    }
+
+    .pp-portfolio__title{
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      line-height: 1.1;
+      color: var(--h-color);
+    }
+
+    .pp-portfolio__slider{
+      width: min(1200px, 92%);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: .75rem;
+    }
+
+    .pp-portfolio__viewport{
+      overflow: hidden;
+      border-radius: 22px;
+      outline: none;
+    }
+
+    .pp-portfolio__track{
+      display: flex;
+      gap: 1.25rem;
+      padding: .5rem;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+
+    .pp-portfolio__track::-webkit-scrollbar{ display: none; }
+
+    .pp-portfolio__slide{
+      flex: 0 0 100%;
+      scroll-snap-align: center;
+      scroll-snap-stop: always;
+      padding: .25rem;
+    }
+
+    /* Desktop: show 2 cards per view, still snaps per card */
+    @media (min-width: 900px){
+      .pp-portfolio__slide{ flex-basis: 50%; }
+    }
+
+    .pp-portfolio__card{
+      position: relative;
+      border-radius: 22px;
+      overflow: hidden;
+      aspect-ratio: 1 / 1;
+      background: var(--main-bg-color);
+      box-shadow: 0 10px 30px rgba(0,0,0,.10);
+      transform: translateZ(0);
+    }
+
+    .pp-portfolio__media{
+      position: absolute;
+      inset: 0;
+      background: #000;
+    }
+
+    .pp-portfolio__media img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transform: scale(1.02);
+      transition: transform .35s ease;
+    }
+
+    .pp-portfolio__card::after{
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(0,0,0,0.10) 0%,
+        rgba(0,0,0,0.25) 40%,
+        rgba(0,0,0,0.65) 100%
+      );
+      opacity: .95;
+      transition: opacity .25s ease;
+      pointer-events: none;
+    }
+
+    .pp-portfolio__content{
+      position: absolute;
+      inset: auto 0 0 0;
+      padding: 1.25rem 1.25rem 1.1rem;
+      color: #fff;
+      z-index: 2;
+      transform: translateY(0);
+      transition: transform .25s ease;
+    }
+
+    .pp-portfolio__tag{
+      margin: 0 0 .4rem;
+      font-size: .8rem;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      opacity: .9;
+    }
+
+    .pp-portfolio__domain{
+      margin: 0 0 .6rem;
+      font-size: 1.25rem;
+      line-height: 1.15;
+    }
+
+    .pp-portfolio__desc{
+      margin: 0 0 1rem;
+      font-size: .98rem;
+      line-height: 1.45;
+      opacity: .95;
+      max-width: 42ch;
+    }
+
+    .pp-portfolio__cta{
+      display: inline-flex;
+      align-items: center;
+      gap: .55rem;
+      padding: .65rem .95rem;
+      border-radius: 999px;
+      background: var(--accent-color);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: .95rem;
+      box-shadow: 0 10px 22px rgba(0,0,0,.18);
+      transition: transform .15s ease, filter .15s ease;
+      will-change: transform;
+    }
+
+    .pp-portfolio__cta:hover{
+      transform: translateY(-1px);
+      filter: brightness(1.02);
+    }
+
+    .pp-portfolio__ctaIcon{
+      font-size: 1rem;
+      line-height: 1;
+      transform: translateY(-1px);
+    }
+
+    .pp-portfolio__name{
+      margin: .8rem 0 0;
+      text-align: center;
+      font-weight: 800;
+      color: var(--h-color);
+    }
+
+    .pp-portfolio__nav{
+      width: 46px;
+      height: 46px;
+      border-radius: 999px;
+      border: 1px solid rgba(0,0,0,.12);
+      background: var(--main-bg-color);
+      color: var(--p-color);
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      font-size: 1.8rem;
+      line-height: 1;
+      box-shadow: 0 10px 20px rgba(0,0,0,.10);
+      transition: transform .15s ease, opacity .15s ease;
+      user-select: none;
+    }
+
+    .pp-portfolio__nav:hover{ transform: translateY(-1px); }
+    .pp-portfolio__nav:disabled{ opacity: .35; cursor: not-allowed; transform: none; }
+
+    /* Hover polish */
+    .pp-portfolio__slide:hover .pp-portfolio__media img{ transform: scale(1.06); }
+    .pp-portfolio__slide:hover .pp-portfolio__card::after{ opacity: .88; }
+
+    /* Pager dots */
+    .pp-portfolio__pager{
+      width: min(1200px, 92%);
+      margin: 1rem auto 0;
+      display: flex;
+      gap: .55rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .pp-portfolio__dot{
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(0,0,0,.18);
+      background: transparent;
+      opacity: .55;
+      cursor: pointer;
+      padding: 0;
+      transition: transform .15s ease, opacity .15s ease, background .15s ease, border-color .15s ease;
+    }
+
+    .pp-portfolio__dot[aria-current="true"]{
+      opacity: 1;
+      transform: scale(1.15);
+      background: var(--accent-color);
+      border-color: var(--accent-color);
+    }
+
+    /* Focus ring for accessibility */
+    .pp-portfolio__viewport:focus-visible,
+    .pp-portfolio__nav:focus-visible,
+    .pp-portfolio__dot:focus-visible,
+    .pp-portfolio__cta:focus-visible{
+      outline: 3px solid rgba(0,0,0,.18);
+      outline-offset: 3px;
+    }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce){
+      .pp-portfolio__track{ scroll-behavior: auto; }
+      .pp-portfolio__media img,
+      .pp-portfolio__card::after,
+      .pp-portfolio__cta,
+      .pp-portfolio__nav{
+        transition: none !important;
+      }
+    }
