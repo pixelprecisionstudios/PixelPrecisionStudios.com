@@ -193,11 +193,13 @@
     .pp-portfolio__nav.pp-portfolio__nav--prev {
       position: absolute;
       z-index: 10000000;
+      left: 5%;
     }
 
     .pp-portfolio__nav.pp-portfolio__nav--next {
       position: absolute;
       z-index: 10000000;
+      right: 5%;
     }
 
     .pp-portfolio__nav:hover{ transform: translateY(-1px); }
