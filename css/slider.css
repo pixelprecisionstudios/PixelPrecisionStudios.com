@@ -67,6 +67,12 @@
       .pp-portfolio__slide{ flex-basis: 40%; }
     }
 
+    @media (max-width: 899px){
+      .pp-portfolio__nav{
+        display: none;
+      }
+    }
+
     .pp-portfolio__card{
       position: relative;
       border-radius: 22px;
