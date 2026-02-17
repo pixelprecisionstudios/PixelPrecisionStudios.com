@@ -69,7 +69,7 @@
 
     @media screen and (max-width: 899px){
       .pp-portfolio__nav{
-        display: none;
+        display: none !important;
       }
     }
 
