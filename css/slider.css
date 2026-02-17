@@ -64,7 +64,7 @@
 
     /* Desktop: show 2 cards per view, still snaps per card */
     @media (min-width: 900px){
-      .pp-portfolio__slide{ flex-basis: 40%; }
+      .pp-portfolio__slide{ flex-basis: 35%; }
     }
 
     @media screen and (max-width: 899px){
