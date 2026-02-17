@@ -129,6 +129,10 @@
       transition: transform .25s ease;
     }
 
+    .pp-portfolio__content .subheader {
+      font-weight: 500;
+    }
+
     .pp-portfolio__tag{
       margin: 0 0 .4rem;
       font-size: .8rem;
