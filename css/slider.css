@@ -73,6 +73,12 @@
       }
     }
 
+    @media screen and (max-width: 899px){
+      .pp-portfolio__content h2{
+        text-align: left;
+      }
+    }
+
     .pp-portfolio__card{
       position: relative;
       border-radius: 22px;
