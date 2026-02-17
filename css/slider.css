@@ -67,7 +67,7 @@
       .pp-portfolio__slide{ flex-basis: 40%; }
     }
 
-    @media (max-width: 899px){
+    @media screen and (max-width: 899px){
       .pp-portfolio__nav{
         display: none;
       }
