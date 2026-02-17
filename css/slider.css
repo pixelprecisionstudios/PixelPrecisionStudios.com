@@ -202,6 +202,10 @@
       user-select: none;
     }
 
+    .pp-portfolio__nav img {
+      max-width: 50%;
+    }
+
     .pp-portfolio__nav.pp-portfolio__nav--prev {
       position: absolute;
       z-index: 10000000;
