@@ -176,6 +176,7 @@
       font-size: 1rem;
       line-height: 1;
       transform: translateY(-1px);
+      max-width: 30px;
     }
 
     .pp-portfolio__name{
